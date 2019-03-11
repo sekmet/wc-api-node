@@ -108,7 +108,7 @@ WooCommerce.getAsync('products').then(function(result) {
 ```
 
 ## Release History
-
+- 2019-03-11 - v1.4.3 - added jwt auth token support.
 - 2016-12-14 - v1.4.2 - Fixed WordPress 4.7 compatibility.
 - 2016-09-28 - v1.4.1 - Updated dependencies and updated/fixed oAuth1.0a.
 - 2016-06-30 - v1.4.0 - Added `wpAPIPrefix` option to allow custom WP REST API Url prefix and support for promified methods.
