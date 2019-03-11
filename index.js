@@ -166,6 +166,7 @@ WooCommerceAPI.prototype._request = function(method, endpoint, data, callback) {
       'Accept': 'application/json'
     },
     auth: {
+      'sendImmediately': false,
       'bearer': this.bearerToken
     }
   };
