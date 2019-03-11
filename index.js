@@ -163,8 +163,10 @@ WooCommerceAPI.prototype._request = function(method, endpoint, data, callback) {
     timeout: this.timeout,
     headers: {
       'User-Agent': 'WooCommerce API Client-Node.js/' + this.classVersion,
-      'Accept': 'application/json',
-      'Authorization': 'Bearer ' + this.bearerToken
+      'Accept': 'application/json'
+    },
+    auth: {
+      'bearer': this.bearerToken
     }
   };
 
