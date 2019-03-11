@@ -32,7 +32,7 @@ function WooCommerceAPI(opt) {
     throw new Error('consumerSecret is required');
   }
 
-  this.classVersion = '1.4.2';
+  this.classVersion = '1.4.3';
   this._setDefaultsOptions(opt);
 }
 
@@ -52,6 +52,7 @@ WooCommerceAPI.prototype._setDefaultsOptions = function(opt) {
   this.verifySsl       = false === opt.verifySsl ? false : true;
   this.encoding        = opt.encoding || 'utf8';
   this.queryStringAuth = opt.queryStringAuth || false;
+  this.bearerToken     = opt.bearerToken || false;
   this.port            = opt.port || '';
   this.timeout         = opt.timeout;
 };
@@ -162,7 +163,8 @@ WooCommerceAPI.prototype._request = function(method, endpoint, data, callback) {
     timeout: this.timeout,
     headers: {
       'User-Agent': 'WooCommerce API Client-Node.js/' + this.classVersion,
-      'Accept': 'application/json'
+      'Accept': 'application/json',
+      'Authorization': 'Bearer ' + this.bearerToken
     }
   };
 
